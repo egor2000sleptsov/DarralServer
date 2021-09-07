@@ -9,7 +9,6 @@ module.exports = function (req, res) {
 			res.send(global.listOfStatus.notExist())
 			return null
 		}
-		console.log(row)
 		res.send(global.listOfStatus.success(row))
 	} catch (e) {
 		console.log(e)

@@ -1,12 +1,17 @@
 const receive = require('./receive')
+const create = require('./create')
+
 
 module.exports = function (req, res) {
 	res.setHeader("Access-Control-Allow-Headers", "origin, content-type, accept")
 	res.setHeader("Access-Control-Allow-Origin", "*")
 	const {body} = req
 	console.log('Есть запрос по категориям')
-	if (body.method ==='receive'){
+	if (body.method === 'receive') {
 		receive(req, res)
+		return null
+	} else if (body.method === 'create') {
+		create(req, res)
 		return null
 	}
 
