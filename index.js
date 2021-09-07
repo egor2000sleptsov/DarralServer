@@ -3,6 +3,7 @@ const db = require('./db')
 const router = require('./router')
 const listOfStatus = require('./listOfStatus')
 const dotenv = require('dotenv')
+const cors = require('cors')
 
 dotenv.config()
 
@@ -15,6 +16,9 @@ app.use(express.json())
 
 //Router
 app.use(router)
+
+//CORS
+app.use(cors())
 
 //define global objects
 global.db = db
